@@ -64,6 +64,58 @@
     .teammark{position:absolute;top:16px;right:20px;display:flex;align-items:center;gap:10px}
     .teammark img{width:40px;height:40px;border-radius:50%}
     .teammark span{font-size:15px;font-weight:600;color:var(--accent)}
+
+    /* ✅ Responsive design for mobile */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    overflow-x: hidden;
+  }
+
+  .slide {
+    width: 100%;
+    min-height: 100vh;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow-y: auto;  /* scrolling enable */
+  }
+
+  h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .flowchart {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .flowchart .arrow {
+    transform: rotate(90deg); /* arrow niche ki taraf */
+  }
+
+  .teammark {
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+  }
+
+  .teammark img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -238,4 +290,5 @@
 
 
       
+
 
