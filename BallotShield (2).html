@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Presentation — BallotShield (SIH 2025)</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#4fd1c5;
+      --muted:#9aa6b2;
+      --glass: rgba(255,255,255,0.04);
+      --font-sans: 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    html,body{height:100%;margin:0;background:linear-gradient(135deg,#071226 0%, #082033 60%);font-family:var(--font-sans);color:#e6eef6;overflow:hidden}
+    .deck{height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;position:relative}
+    .slide{
+      width:1100px;max-width:95%;height:620px;max-height:90vh;background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));border-radius:18px;padding:36px;box-shadow:0 20px 60px rgba(2,6,23,0.6);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.95);opacity:0;transition:all 0.6s ease;overflow:hidden;display:flex;flex-direction:column;gap:18px}
+    .slide.active{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
+    .controls{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:10}
+    .btn{background:var(--glass);border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:8px;color:#fff;cursor:pointer;transition:0.3s}
+    .btn:hover{background:var(--accent);color:#000}
+    .title{font-size:34px;font-weight:700;letter-spacing:0.6px}
+    .subtitle{font-size:16px;color:var(--muted)}
+    .row{display:flex;align-items:center;gap:18px}
+
+    .logo-wrap{width:120px;height:120px;border-radius:999px;overflow:hidden;flex:0 0 120px;border:6px solid rgba(79,209,197,0.12);backdrop-filter: blur(6px);display:flex;align-items:center;justify-content:center;animation:float 4s ease-in-out infinite}
+    .logo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+    .content{display:flex;gap:24px;align-items:flex-start}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(12,18,26,0.04));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 8px 20px rgba(0,0,0,0.3);animation:fadeInUp 0.8s ease}
+    .big{font-size:22px;font-weight:600}
+
+    .footer{position:absolute;left:24px;bottom:18px;color:var(--muted);font-size:13px}
+
+    .cover-center{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;gap:12px;text-align:center}
+    .project-name{font-size:46px;font-weight:800;letter-spacing:1px}
+    .tagline{font-size:18px;color:var(--accent);font-weight:700}
+
+    .dots{display:flex;gap:8px}
+    .dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,0.06)}
+    .dot.active{background:var(--accent);box-shadow:0 4px 10px rgba(79,209,197,0.4)}
+
+    @keyframes fadeInUp{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+
+    .diagram{width:100%;height:250px;background:rgba(255,255,255,0.05);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--muted);margin-top:12px}
+
+    @media (max-width:720px){
+      .slide{padding:20px;height:84vh}
+      .logo-wrap{width:90px;height:90px}
+      .project-name{font-size:32px}
+    }
+
+    /* 🔹 Flowchart */
+    .flowchart {display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:40px}
+    .flowchart .box{background:#2563eb;color:white;padding:15px 25px;border-radius:10px;font-weight:bold;text-align:center;min-width:100px;box-shadow:0 4px 8px rgba(0,0,0,0.2);animation:fadeIn 1s ease-in-out;display:flex;flex-direction:column;align-items:center}
+    .flowchart .box img{width:60px;height:60px;margin-bottom:10px}
+    .flowchart .arrow{font-size:24px;font-weight:bold;color:#ff9800;animation:fadeIn 1s ease-in-out}
+
+    /* 🔹 Top-right logo+name */
+    .teammark{position:absolute;top:16px;right:20px;display:flex;align-items:center;gap:10px}
+    .teammark img{width:40px;height:40px;border-radius:50%}
+    .teammark span{font-size:15px;font-weight:600;color:var(--accent)}
+  </style>
+</head>
+<body>
+  <div class="deck" id="deck">
+
+    <!-- Slide 0 : Cover -->
+    <section class="slide active" data-index="0">
+      
+      <div class="row">
+        <div class="logo-wrap"><img src="logo.jpg"></div>
+        <div>
+          <div class="title">Presentation For SIH : 2025</div>
+          <div class="subtitle">“BallotShield” — (Secure And Reliable Voting)</div>
+        </div>
+      </div>
+      <div class="cover-center">
+        <div class="project-name">BallotShield</div>
+        <div class="tagline">Secure And Reliable Voting</div>
+        <div class="card">
+          <div style="font-weight:700">Presenting by Student's    </div>
+          <div style="margin-top:8px;color:var(--muted)"> of Shushila Devi Bansal College Of Technology</div>
+        </div>
+      </div>
+      <div class="footer">Date: 23/09/2025</div>
+    </section>
+
+     <!-- Slide 1: Team -->
+    
+     <section class="slide" data-index="1">
+      <div class="teammark"><img src="team.logo.jpg"><span>LedgerLegend</span></div>
+      <div style="font-weight:700"> Team — LedgerLegend  </div>
+      <div class="subtitle">  Presenting Project for Smart India Hackathon (SIH) 2025
+      <div class="subtitle">  By LedgerLegend’s </div>
+      </div>
+      <div class="content" style="margin-top:12px">
+        <div class="card" style="flex:1">
+          <div class="big">LedgerLegend’s Members</div>
+          <ul style="margin-top:12px;line-height:1.9;color:var(--muted)">
+            <li>Mayuri Patel</li>
+            <li>Priyansh Khare</li>
+            <li>Mahi Pardeshi</li>
+            <li>Karan Mishra</li>
+            <li>Priyanshu Verma</li>
+            <li>Ayush Patil</li>
+          </ul>
+        </div>
+        <div class="card" style="flex:1">
+          <div><b>Course</b><br><span style="color:var(--muted)">B.Tech in Computer Science &amp; Engineering</span></div>
+          <div style="margin-top:12px"><b>Semester</b><br><span style="color:var(--muted)">3rd year, 5th semester</span></div>
+          <div style="margin-top:12px"><b>Date</b><br><span style="color:var(--muted)">23/09/2025</span></div>
+        </div>
+      </div>
+      <div class="footer">LedgerLegend — BallotShield</div>
+    </section>
+
+    
+    <!-- Slide 2: Idea & Title -->
+    <section class="slide" data-index="2">
+      <div class="title">Idea & Title</div>
+      <div class="card">
+        <p style="line-height:1.8;color:var(--muted)"> <h1> Title : “ VeriVote " ( Blockchain-Powered Transparent Voting )  </h1> </p>
+      </div>
+      
+      <div style="font-weight:900"> IDEA </div>
+      <div class="subtitle"> 1) Detailed explanation of the proposed Solution:
+      <div class="subtitle">  Blockchain-Powered Voting - Transparent, Secure & anonymous with real-time results </div>
+      </div>
+      <div class="subtitle"> 2) How it addresses the problem:
+      <div class="subtitle">  Tamper-Proof - No duplicates , No Manipulation , Full trust </div>
+      </div>
+      <div class="subtitle"> 3) Innovation and uniqueness of the solution:
+      <div class="subtitle">  Next-Gen Elections - Blockchain + Cryptography + Easy Access = Scalable & Secure. </div>
+      </div>
+      
+      <div class="footer">SIH 2025 — Idea</div>
+    </section>
+
+    <!-- Slide 3 : Model Demo -->
+    <section class="slide" data-index="3">
+      <div class="teammark"><img src="team.logo.jpg"><span>LedgerLegend</span></div>
+      <h1 class="title">Model Demonstration</h1>
+      <div class="card" style="flex:1;display:flex;align-items:center;justify-content:center">
+        <!-- 🔹 Video embed -->
+        <video width="90%" height="400" controls autoplay muted loop>
+          <source src="demo vedio.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+            <div class="footer">BallotShield : Model</div>
+    </section>
+
+    <!-- Slide 4 : Flowchart -->
+    <section class="slide" data-index="4">
+      <div class="teammark"><img src="team.logo.jpg"><span>LedgerLegend</span></div>
+      <h1 class="title">Voting System Process</h1>
+      <div class="flowchart">
+        <div class="box"><img src="user.jpg"><p>User</p></div>
+        <div class="arrow">→</div>
+        <div class="box"><img src="authe..jpg"><p>Authentication</p></div>
+        <div class="arrow">→</div>
+        <div class="box"><img src="vote.jpg"><p>Vote</p></div>
+        <div class="arrow">→</div>
+        <div class="box"><img src="block.jpg"><p>Blockchain Ledger</p></div>
+        <div class="arrow">→</div>
+        <div class="box"><img src="veri.jpg"><p>Verification</p></div>
+        <div class="arrow">→</div>
+        <div class="box"><img src="result.jpg"><p>Results</p></div>
+      </div>
+            <div class="footer">BallotShield:Process</div>
+    </section>
+
+        
+
+
+    <!-- Slide 5 : Conclusion -->
+    <section class="slide" data-index="5">
+      <div class="teammark"><img src="team.logo.jpg"><span>LedgerLegend</span></div>
+      <div class="title">Thank You!</div>
+      <div class="subtitle">Questions? Get in touch with the team</div>
+      <div class="card">
+        <div>
+        <p class="big">BallotShield provides a secure, transparent and efficient voting mechanism for the digital age.</p>
+      </div>
+       <div style="font-weight:700">LedgerLegend’s Members</div>
+       <div style="margin-top:10px;color:var(--muted);line-height:1.8">
+          Mayuri Patel | Priyansh Khare | Mahi Pardeshi<br>
+          Karan Mishra | Priyanshu Verma | Ayush Patil
+        </div>
+      </div>
+      <div class="footer">Date: 23/09/2025 — BallotShield</div>
+    </section>
+
+  </div>
+
+  <div class="controls">
+    <button class="btn" id="prev">◀ Prev</button>
+    <div class="dots" id="dots"></div>
+    <button class="btn" id="next">Next ▶</button>
+  </div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const dotsWrap = document.getElementById('dots');
+    let index = 0;
+
+    function renderDots(){
+      dotsWrap.innerHTML='';
+      slides.forEach((s,i)=>{
+        const d=document.createElement('div');
+        d.className='dot'+(i===index?' active':'');
+
+        d.onclick=()=>go(i);
+        dotsWrap.appendChild(d);
+      })
+    }
+
+    function show(i){
+      slides.forEach((s,idx)=> s.classList.toggle('active', idx===i));
+      index=i; renderDots();
+    }
+    function go(i){if(i<0)i=0;if(i>slides.length-1)i=slides.length-1;show(i)}
+
+    document.getElementById('prev').onclick=()=>go(index-1);
+    document.getElementById('next').onclick=()=>go(index+1);
+    document.addEventListener('keydown',(e)=>{if(e.key==='ArrowRight'||e.key===' ')go(index+1);if(e.key==='ArrowLeft')go(index-1);});
+    show(0);
+  </script>
+</body>
+</html>
+
+
+
+
+      
