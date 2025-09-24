@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BallotShield Presentation</title>
+<style>
+:root{
+  --primary:#1abc9c;
+  --accent:#e67e22;
+  --light:#ecf0f1;
+  --font-sans:'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+html, body {
+  margin:0;
+  padding:0;
+  height:100%;
+  font-family: var(--font-sans);
+  overflow:hidden;
+  background:#000;
+  color:#fff;
+}
+
+/* Deck and slides */
+.deck {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.slide {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:30px;
+  background-size:contain;
+  background-position:center;
+  background-repeat:no-repeat;
+  opacity:0;
+  transition: all 0.5s ease;
+}
+
+.slide.active {
+  opacity:1;
+  z-index:1;
+}
+
+/* Logos */
+.logo-wrap {
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  overflow:hidden;
+  border:4px solid rgba(255,255,255,0.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.logo-wrap img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Title */
+.title {
+  font-size:48px;
+  font-weight:900;
+  color: var(--primary);
+  margin-top:20px;
+  text-align:center;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+/* Controls */
+.controls {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  display:flex;
+  gap:10px;
+  z-index:10;
+}
+
+.btn {
+  padding:10px 18px;
+  border:none;
+  border-radius:12px;
+  font-weight:700;
+  color:#fff;
+  background: rgba(0,0,0,0.5);
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover {
+  background: var(--primary);
+}
+
+.dots{
+  display:flex;
+  gap:8px;
+}
+
+.dot{
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background: rgba(255,255,255,0.3);
+  cursor:pointer;
+  transition:0.3s;
+}
+.dot.active{
+  background: var(--primary);
+  box-shadow:0 0 8px var(--primary);
+}
+
+/* Responsive */
+@media(max-width:600px){
+  .title {
+    font-size:32px;
+  }
+  .logo-wrap{
+    width:70px;
+    height:70px;
+  }
+  .btn{
+    padding:8px 12px;
+    font-size:14px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="deck">
+
+<!-- Slide 0: Cover -->
+<section class="slide active" data-index="0" style="background-image:url('newwww.jpg');">
+  <div style="width:100%; height:100%; display:flex; flex-direction:column;  padding:40px; box-sizing:border-box; position:relative;">
+
+    <!-- Left Side: Logo + Heading -->
+    <div style="display:flex; align-items:center; gap:20px;">
+      <div class="logo-wrap" style="width:120px; height:120px; border-radius:50%; overflow:hidden; border:4px solid rgba(255,255,255,0.5);">
+        <img src="bannnn.jpg" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <div style="font-size:48px; font-weight:900; color:#00ffff; text-shadow: 2px 2px 10px rgba(0,0,0,0.7);">
+          "BallotShield"
+        </div>
+        <div style="font-size:22px; font-weight:600; color:#51511f; text-shadow: 1px 1px 8px rgba(0,0,0,0.7);">
+          (Secure And Reliable Voting)
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side: Team Logo -->
+    <div style="position:absolute; top:40px; right:40px;">
+      <div class="logo-wrap" style="width:120px; height:120px;">
+        <img src="team.logo.jpg" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+
+    <!-- Spacer -->
+    <div style="flex:1;"></div>
+
+    <!-- Presented by Card -->
+    <div class="card" style="text-align:center; font-size:20px; align-self:center; max-width:600px; color:#262419; text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
+      Presented by Students of <br> Shushila Devi Bansal College Of Technology
+    </div>
+  </div>
+</section>
+
+<!-- Slide 1: Team -->
+<section class="slide" data-index="1" style="background-image:url('newwww.jpg'); background-size:cover; background-position:center; background-repeat:no-repeat; overflow-y:auto;">
+  <div style="flex:1; display:flex; flex-direction:column; gap:20px; padding:40px; background: rgba(0,0,0,0.35); position:relative; min-height:100vh;">
+
+    <!-- Logo + Heading -->
+    <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+      <div class="logo-wrap" style="width:80px; height:80px; border-radius:50%; overflow:hidden; border:3px solid rgba(255,255,255,0.3);">
+        <img src="logo.jpg" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div style="display:flex; flex-direction:column; gap:5px;">
+        <div style="font-size:22px; font-weight:800; color:#ffd700; text-shadow:2px 2px 8px rgba(0,0,0,0.7);">
+          Presenting Project for SIH 2025
+        </div>
+        <div style="font-size:20px; font-weight:800; color:#00ffff; text-shadow:2px 2px 8px rgba(0,0,0,0.7);">
+          Project: BallotShield (Secure and Reliable Voting)
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side: Team Logo -->
+    <div style="position:absolute; top:40px; right:40px;">
+      <div class="logo-wrap" style="width:120px; height:120px;">
+        <img src="team.logo.jpg" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+
+    <!-- Title -->
+    <div class="title" style="color:#00ffff; font-size:50px; font-weight:900; text-shadow:3px 3px 15px rgba(0,0,0,0.7); text-align:center;">
+      Team LedgerLegend
+    </div>
+
+    <!-- Members Card -->
+    <div class="content" style="display:flex; flex-wrap:wrap; gap:25px; justify-content:center; width:100%; max-width:950px;">
+      <div class="card" style="flex:1; min-width:270px; background: rgba(0,0,0,0.85); padding:25px; border-radius:18px; box-shadow:0 8px 22px rgba(0,0,0,0.7); color:#fff; text-align:center; font-weight:700;">
+        <b style="font-size:20px;">Members of LedgerLegend</b>
+        <ul style="margin-top:15px; font-size:17px; line-height:1.8; list-style:none; padding:0; font-weight:700;">
+          <li>✅ Mayuri Patel</li>
+          <li>✅ Priyansh Khare</li>
+          <li>✅ Mahi Pardeshi</li>
+          <li>✅ Karan Mishra</li>
+          <li>✅ Priyanshu Verma</li>
+          <li>✅ Ayush Patil</li>
+        </ul>
+      </div>
+
+      <!-- Project Info Card -->
+      <div class="card" style="flex:1; min-width:270px; background: rgba(0,0,0,0.85); padding:25px; border-radius:18px; box-shadow:0 8px 22px rgba(0,0,0,0.7); color:#fff; text-align:center; font-size:17px; line-height:1.8; font-weight:700;">
+        <div style="font-size:20px; font-weight:900; color:#ffd700; margin-bottom:15px; text-shadow:2px 2px 8px rgba(0,0,0,0.7);">
+          Project Information
+        </div>
+        <b>Project:</b> BallotShield (Secure & Reliable Voting) <br>
+        <b>Idea:</b> Secure, transparent & tamper-proof. <br>
+        <b>Benefits:</b> Eliminates duplicate, Real-time & Accurate results, Transparency & trust. <br>
+        <b>Technology:</b> Blockchain <br>
+        <b>Motive:</b> To make election process fair, trustable & error-free.
+      </div>
+    </div>
+    
+      <!-- Image Card -->
+      <div class="gallery-card card" data-type="image" style="width:300px; height:200px; cursor:pointer; text-align:center; display:flex; justify-content:center; align-items:center; background:black; border-radius:12px; box-shadow:0 6px 16px rgba(0,0,0,0.5); position:relative; overflow:hidden;">
+        <img src="card.jpg" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+        <div style="position:absolute; color:#fff; font-weight:700; font-size:18px; background:rgba(0,0,0,0.4); padding:5px 10px; border-radius:6px;">🖼 View Image</div>
+      </div>
+</section>
+
+<!-- Slide 2: Idea + Reference -->
+<section class="slide" data-index="2" style="background-image:url('ballotShield.jpg'); background-size:cover; background-position:center; background-repeat:no-repeat; padding:30px;">
+
+  <!-- Title + Team Logo -->
+  <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px; margin-bottom:20px;">
+    <div style="flex:1; min-width:250px;">
+      <div class="card" style="text-align:left; font-size:32px; font-weight:900; background: linear-gradient(135deg, #1abc9c, #16a085); color:#fff; text-shadow:2px 2px 10px rgba(0,0,0,0.7); border-radius:15px; padding:20px;">
+        TITLE: "VeriVote" (Blockchain-Powered Transparent Voting)
+      </div>
+    </div>
+    <div style="flex-shrink:0;">
+      <div class="logo-wrap"><img src="team.logo.jpg" alt="Team Logo"></div>
+    </div>
+  </div>
+
+  <!-- Side by Side -->
+  <div style="display:flex; gap:30px; justify-content:center; align-items:flex-start; flex-wrap:wrap;">
+
+    <!-- Left: Project Idea + Points -->
+    <div style="flex:1; min-width:300px; max-width:600px; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:26px; font-weight:800; color:#ffd700; text-shadow:2px 2px 8px rgba(0,0,0,0.7); margin-bottom:10px; text-align:left;">
+        Our PROJECT IDEA:
+      </div>
+      <div class="card" style="font-size:18px; background:black; color:#fff; padding:12px 20px; border-radius:10px; font-weight:600; box-shadow:0 4px 12px rgba(0,0,0,0.35); text-align:center;">
+        ✅ Transparent Voting Process
+      </div>
+      <div class="card" style="font-size:18px; background:black; color:#fff; padding:12px 20px; border-radius:10px; font-weight:600; box-shadow:0 4px 12px rgba(0,0,0,0.35); text-align:center;">
+        ✅ High Security with Blockchain
+      </div>
+      <div class="card" style="font-size:18px; background:black; color:#fff; padding:12px 20px; border-radius:10px; font-weight:600; box-shadow:0 4px 12px rgba(0,0,0,0.35); text-align:center;">
+        ✅ Anonymous & Private Voter Identity
+      </div>
+      <div class="card" style="font-size:18px; background:black; color:#fff; padding:12px 20px; border-radius:10px; font-weight:600; box-shadow:0 4px 12px rgba(0,0,0,0.35); text-align:center;">
+        ✅ Real-Time Results & Verification
+      </div>
+    </div>
+
+    <!-- Right: Image Card -->
+    <div style="flex:1; min-width:300px; max-width:400px; display:flex; justify-content:center; align-items:center;">
+      <div class="gallery-card card" data-type="image" style="width:100%; height:280px; cursor:pointer; display:flex; justify-content:center; align-items:center; background:black; border-radius:12px; box-shadow:0 6px 16px rgba(0,0,0,0.5); position:relative; overflow:hidden;">
+        <img src="card 2.jpg" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+        <div style="position:absolute; color:#fff; font-weight:700; font-size:18px; background:rgba(0,0,0,0.4); padding:5px 10px; border-radius:6px;">🖼 View Image</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reference Project -->
+  <div style="text-align:center; margin-top:20px;">
+    <h3 style="font-size:28px; font-weight:700; color:#ffd700; text-shadow:2px 2px 8px rgba(0,0,0,0.7); margin-bottom:15px;">
+      📂 Reference Project
+    </h3>
+    <a href="https://github.com/jobic10/e-voting-with-django?utm_source=chatgpt.com" target="_blank" 
+       style="font-size:20px; font-weight:600; color:#fff; text-decoration:none; background:#000; padding:12px 24px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.4); transition:0.3s;">
+       🔗 View on GitHub
+    </a>
+  </div>
+</section>
+
+<!-- Slide 3: Model / Gallery -->
+<section class="slide" data-index="3" style="background-image:url('newwww.jpg'); background-size:contain; background-position:center; background-repeat:no-repeat; overflow-y:auto;">
+  <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:30px; padding:30px; background: rgba(0,0,0,0.35); min-height:100vh; position:relative;">
+    <div style="position:absolute; top:30px; right:30px;">
+      <div class="logo-wrap" style="width:90px; height:90px;">
+        <img src="team.logo.jpg" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+
+    <!-- Heading -->
+    <div class="card" style="text-align:center; font-size:32px; font-weight:900; background: linear-gradient(135deg, #1abc9c, #16a085); color:#fff; text-shadow:2px 2px 10px rgba(0,0,0,0.7); border-radius:15px; padding:20px; width:80%;">
+      Model Demonstration
+    </div>
+
+    <!-- Cards Container -->
+    <div style="display:flex; gap:30px; justify-content:center; flex-wrap:wrap; width:100%; max-width:900px;">
+      <!-- Video Card -->
+      <div class="gallery-card card" data-type="video" style="width:300px; height:200px; cursor:pointer; text-align:center; display:flex; justify-content:center; align-items:center; background:black; border-radius:12px; box-shadow:0 6px 16px rgba(0,0,0,0.5); position:relative; overflow:hidden;">
+        <video src="WhatsApp Video 2025-09-21 at 2.05.03 PM.mp4" style="width:100%; height:100%; object-fit:cover; border-radius:12px;" muted loop></video>
+        <div style="position:absolute; color:#fff; font-weight:700; font-size:18px; background:rgba(0,0,0,0.4); padding:5px 10px; border-radius:6px;">▶ Play Video</div>
+      </div>
+
+      <!-- Image Card -->
+      <div class="gallery-card card" data-type="image" style="width:300px; height:200px; cursor:pointer; text-align:center; display:flex; justify-content:center; align-items:center; background:black; border-radius:12px; box-shadow:0 6px 16px rgba(0,0,0,0.5); position:relative; overflow:hidden;">
+        <img src="model flowchart.jpeg" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+        <div style="position:absolute; color:#fff; font-weight:700; font-size:18px; background:rgba(0,0,0,0.4); padding:5px 10px; border-radius:6px;">🖼 View Image</div>
+      </div>
+    </div>
+</section>
+
+
+
+<!-- Slide 4: Flowchart -->
+<section class="slide" data-index="4" style="background-image:url('newwww.jpg'); background-size:cover; background-position:center; background-repeat:no-repeat;">
+  <div style="flex:1; display:flex; flex-direction:column; align-items:center; padding:30px; overflow-y:auto; background: rgba(0,0,0,0.3);">
+
+   <!-- Right Side: Team Logo -->
+    <div style="position:absolute; top:40px; right:40px; display:flex; flex-direction:column; align-items:center; gap:10px;">
+      <div class="logo-wrap" style="width:120px; height:120px; border-radius:50%; overflow:hidden; border:4px solid rgba(255,255,255,0.5);">
+        <img src="team.logo.jpg" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      
+    </div>
+
+    <!-- Title -->
+    <div class="title" style="color:#00ffff; font-size:48px; font-weight:900; text-shadow:2px 2px 10px rgba(0,0,0,0.7); margin-bottom:25px;">
+      Voting Process
+    </div>
+
+
+
+
+    <!-- Flowchart Boxes -->
+    <div class="flowchart" style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px; align-items:center;" id="flowBoxes">
+    </div>
+
+  </div>
+</section>
+
+<script>
+const flowData = [
+  {img:'user.jpg', text:'User'},
+  {img:'authe..jpg', text:'Authentication'},
+  {img:'vote.jpg', text:'Vote'},
+  {img:'block.jpg', text:'Blockchain Ledger'},
+  {img:'veri.jpg', text:'Verification'},
+  {img:'result.jpg', text:'Results'}
+];
+
+const flowDiv = document.getElementById('flowBoxes');
+
+flowData.forEach((item, i) => {
+  // Box
+  const box = document.createElement('div');
+  box.style.cssText = `
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+    padding:20px 25px;
+    border-radius:15px;
+    text-align:center;
+    font-weight:700;
+    color:#fff;
+    box-shadow:0 8px 20px rgba(0,0,0,0.5);
+    transition:0.3s;
+    cursor:pointer;
+  `;
+  box.onmouseover = () => box.style.transform = 'scale(1.1)';
+  box.onmouseout = () => box.style.transform = 'scale(1)';
+  box.innerHTML = `<img src="${item.img}" style="width:60px;height:60px;margin-bottom:10px; border-radius:10px;"><p>${item.text}</p>`;
+  flowDiv.appendChild(box);
+
+  // Arrow (Double arrow)
+  if(i < flowData.length - 1){
+    const arrow = document.createElement('div');
+    arrow.innerHTML = '⇒'; // Double arrow
+    arrow.style.cssText = `
+      font-size:50px;
+      font-weight:900;
+      color:#ffffff;
+      padding:10px 15px;
+      border-radius:8px;
+      margin:0 10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: rgba(0,0,0,0.6);
+    `;
+    flowDiv.appendChild(arrow);
+  }
+});
+</script>
+
+
+<!-- Slide 5: Conclusion -->
+<section class="slide" data-index="5" style="background-image:url('ballotShield.jpg'); background-size:cover; background-position:center; background-repeat:no-repeat;">
+  <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:50px; text-align:center; background: rgba(0,0,0,0.35);">
+
+
+    <!-- Right Side: Team Logo -->
+    <div style="position:absolute; top:40px; right:40px; display:flex; flex-direction:column; align-items:center; gap:10px;">
+      <div class="logo-wrap" style="width:120px; height:120px; border-radius:50%; overflow:hidden; border:4px solid rgba(255,255,255,0.5);">
+        <img src="team.logo.jpg" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      
+    </div>
+
+
+    <!-- Title -->
+    <div class="title" style="color:#00ffff; text-shadow:2px 2px 12px rgba(0,0,0,0.8); font-size:55px; font-weight:900; margin-bottom:20px;">
+      Thank You!
+    </div>
+
+    <!-- Subtitle -->
+    <div class="subtitle" style="color:#ffcc00; font-size:24px; font-weight:700; margin-bottom:30px; text-shadow: 1px 1px 10px rgba(0,0,0,0.7);">
+      Questions? Get in touch with the team
+    </div>
+
+    <!-- Main Card -->
+    <div class="card" style="padding:30px 35px; border-radius:18px; background: rgba(255,255,255,0.12); color:#fff; text-shadow:1px 1px 6px rgba(0,0,0,0.6); max-width:750px; font-weight:600;">
+      <p class="big" style="font-size:22px; font-weight:700; margin-bottom:20px;">
+        "BallotShield provides a secure, transparent and efficient voting mechanism for the digital age."
+      </p>
+      <p style="color:#ffd700; font-weight:700; margin-top:0; font-size:18px;">
+        Mayuri Patel | Priyansh Khare | Mahi Pardeshi | Karan Mishra | Priyanshu Verma | Ayush Patil
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer" style="color:#00ffff; margin-top:35px; font-weight:600; font-size:16px; text-shadow:1px 1px 8px rgba(0,0,0,0.7);">
+      Date: 23/09/2025 — BallotShield
+    </div>
+
+  </div>
+</section>
+
+
+</div>
+
+<!-- Controls -->
+<div class="controls">
+  <button class="btn" id="prev">◀ Prev</button>
+  <div class="dots" id="dots"></div>
+  <button class="btn" id="next">Next ▶</button>
+</div>
+
+<!-- Fullscreen Overlay -->
+<div id="fullscreenOverlay" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.95); justify-content:center; align-items:center; z-index:2000; flex-direction:column;">
+  <button id="closeFullscreen" style="position:absolute; top:20px; right:20px; font-size:30px; color:#fff; background:none; border:none; cursor:pointer;">✖</button>
+  <video id="fullscreenVideo" controls autoplay style="max-width:90%; max-height:80%; display:none; border-radius:12px;"></video>
+  <img id="fullscreenImg" style="max-width:90%; max-height:80%; display:none; border-radius:12px;">
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.gallery-card');
+  const overlay = document.getElementById('fullscreenOverlay');
+  const closeBtn = document.getElementById('closeFullscreen');
+  const fsVideo = document.getElementById('fullscreenVideo');
+  const fsImg = document.getElementById('fullscreenImg');
+
+  // Gallery card click
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const type = card.getAttribute('data-type');
+
+      if (type === 'video') {
+        const video = card.querySelector('video');
+        if(video){
+          fsVideo.src = video.src;
+          fsVideo.style.display = 'block';
+          fsImg.style.display = 'none';
+          overlay.style.display = 'flex';
+          fsVideo.play();
+        }
+      } else if (type === 'image') {
+        const img = card.querySelector('img');
+        if(img){
+          fsImg.src = img.src;
+          fsImg.style.display = 'block';
+          fsVideo.style.display = 'none';
+          overlay.style.display = 'flex';
+        }
+      }
+    });
+  });
+
+  // Close fullscreen
+  closeBtn.addEventListener('click', () => {
+    overlay.style.display = 'none';
+    fsVideo.pause();
+    fsVideo.currentTime = 0;
+  });
+
+  // Click outside closes
+  overlay.addEventListener('click', (e) => {
+    if(e.target === overlay){
+      overlay.style.display = 'none';
+      fsVideo.pause();
+      fsVideo.currentTime = 0;
+    }
+  });
+
+  // Slide navigation
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+
+  function showSlide(index){
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
+
+  document.getElementById('prev').addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  document.getElementById('next').addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  });
+
+});
+</script>
+</body>
+</html>
+
